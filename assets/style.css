@@ -1,0 +1,403 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+
+}
+
+
+/* HOME */
+#Menu{
+    background-size: 100% 100%;
+    display: flex;
+    align-items: flex-end;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 4;
+}
+#BtnIniciar{
+    width: 60%;
+    max-width: 500px;
+    min-width: 200px;
+    font-size: 30px;
+    position: fixed;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+@keyframes ButtonIniciar{
+    0%{
+        left: -50%;
+    }
+    100%{
+        left: 50%;
+    }
+}
+.DinoAnimate{
+    position: fixed;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -75%);
+    z-index: 7;
+}
+@keyframes DinoLlegar{
+    0%{
+        left: -50%;
+    }
+    100%{
+        left: 50%;
+    }
+}
+@keyframes DinoSalir{
+    0%{
+        left: 50%;
+    }
+    100%{
+        left: 150%;
+    }
+}
+
+
+
+
+.TituloPrincipal{
+    color: orangered;
+    font-size: 40px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Boton flotante de ranking */
+.Rank{
+    position: fixed;
+    display: inline-block;
+    bottom: 25px;
+    right: 25px;
+    z-index: 9;
+    font-size: 20px;
+    animation: MostrarRank 3s linear;
+}
+
+@keyframes MostrarRank{
+    0%{
+        transform: rotate(-180deg) scale(5);
+        right: -50%;
+        
+    }
+    100%{
+        transform: rotate(0deg) scale(1);
+        right: 25px;
+       
+    }
+}
+
+/*Btn Save Score*/
+#DivBtnSaveScore{
+    position: fixed;
+    z-index: 7;
+    left: 50%;
+    bottom: 25px;
+    transform: translate(-50%, 0);
+    font-size: 20px;
+
+}
+
+@keyframes MostrarBtnSaveScore{
+    0%{
+      
+        bottom: -20%;
+    }
+    100%{
+       
+        bottom: 20px;
+    }
+}
+@keyframes LlevarsBtnSaveScore{
+    0%{
+      
+        left: 50%;
+    }
+    100%{
+        left: -50%;
+    }
+}
+
+/* MAIN */
+
+/* TAP TO START */
+.clickToStart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%,0);
+    z-index: 20;
+}
+.IMGTouchClick{
+    width: 100%;
+    max-width: 500px;
+    height: 100%;
+    max-height: 500px;
+
+}
+
+IMGSpaceClick{
+    position: absolute;
+    bottom: 0;
+    z-index: 21;
+}
+
+.Juego{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)), url(../img/Fondo.gif);
+    background-size: 100% 100%;
+    position: relative;
+    height: 90vh;
+    margin: 0 auto;
+}
+
+@keyframes Noche{
+    0%{
+        filter: brightness(100%);
+    }
+    100%{
+        filter: brightness(25%);
+    }
+}
+@keyframes Dia{
+    0%{
+        filter: brightness(25%);
+    }
+    100%{
+        filter: brightness(100%);
+    }
+}
+
+/* Dino */
+.Dino{
+    position:absolute;
+    z-index: 2;
+    bottom: 10%;
+    left: 0;
+}
+
+/* ANIMACIONES Dino */
+@keyframes DinoSaltar{
+    0%{
+        bottom: 0;
+    }
+    50%{
+        bottom: 170px;
+    }
+    65%{
+        bottom: 170px;
+    }
+    0%{
+        bottom: 0;
+    }
+}
+@keyframes DinoSaltar2{
+    0%{
+        bottom: 0;
+    }
+    50%{
+        bottom: 110px;
+    }
+    65%{
+        bottom: 110px;
+    }
+    0%{
+        bottom: 0;
+    }
+}
+
+/* Cactus */
+.Cactus{
+    display: none;
+    position: absolute;
+    bottom: 0%;
+    right: 0;
+}
+.Cactus img{
+    height: 130px;
+}
+
+/* ANIMACIONES Cactus */
+@keyframes Cactus{
+    0%{
+      right: 0;
+     opacity: 0;
+    }
+    25%{
+        opacity: 1;
+    }
+    100%{
+        right: 120%;
+    }
+}
+
+
+/* SCORE */
+.Score{
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    color: wheat;
+}
+
+
+
+/* SUELO */
+.Suelo{
+    position: absolute;
+    height: 20%;
+    width: 100%;
+    bottom: -20%;
+    background-color: rgb(209, 143, 62)
+}   
+
+
+/*GameOver*/
+.GameOver{
+    background-color: #141414e8;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 5;
+}
+@keyframes FondoGameOver{
+    0%{
+       background-color: #14141400;
+    }
+    50%{
+        background-color: #812c2cbb;
+    }
+    100%{
+        background-color: #141414e8;
+    }
+}
+@keyframes TituloGameOver{
+    from{
+        transform: rotate(-360deg);
+        top: -20%;
+    }
+    to{
+        top: 20%;
+        transform: rotate(0deg);
+    }
+}
+@keyframes TituloGameOverMobile{
+    from{
+        transform: rotate(-360deg);
+        top: -20%;
+    }
+    to{
+        top: 5%;
+        transform: rotate(0deg);
+    }
+}
+@keyframes BotonesGameOver{
+    from{
+        left: -50%;  
+    }
+    to{
+        left: 50%;  
+    }
+}
+@keyframes Puntuacion{
+    from{
+        bottom: -40%;
+    }
+    to{
+        bottom: 20%;
+    }
+}
+
+    /* Texto */
+    .TituloGameOver{
+        text-shadow: 0px 0px 5px red;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        position: absolute;
+        top: 20%;
+        text-align: center;
+        width: 100%;
+    }
+    /*SubTitulo*/
+    .SubtituloGameOver{
+        margin-top: 20px;
+        transform: translate(-25%, 0);
+    }
+    /*Puntuación*/
+    .Puntuacion{
+        position: absolute;
+        bottom: 20%;
+        width: 100%;
+        text-align: center;
+        color: white;
+        font-weight: bold;
+        font-size: 20px;
+    }
+    /*Save Score*/
+   
+    /* BOTON RECARGAR */
+    .BotonesGameOver{
+        position: fixed;
+        display: flex;
+        top: 50%;
+        left: 50%;
+        z-index: 6;
+        transform: translate(-50%, -50%);
+    }
+    .BotonesGameOver button{
+        width: 50px;
+        height: 50px;
+    }
+
+@media screen and (max-width:920px) { 
+    .Cactus img{
+        height: 60px;
+    }
+    .Dino img{
+        height: 80px;
+    }
+    .TituloGameOver{
+        top: 5%;
+    }
+    .BotonesGameOver{
+        display: block;
+    }
+}
+
+@media screen and (max-width:550px){
+    body{
+        background-color: #141414;
+    }
+    #Menu{
+        background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(../img/Fondo_Mobile.png);
+    }
+    .Juego{
+        top: 25%;
+        height: 50vh;
+        max-width: 500px;
+        transform: translate(0,-25%);
+    }
+    .IMGSpaceClick{
+        display: none;
+    }
+}
+@media screen and (min-width:550px){
+    #Menu{
+        background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(../img/Fondo_TabletAndPC.png);
+    }
+}

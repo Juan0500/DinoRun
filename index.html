@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title> DINO RUN </title>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/icono.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <!-- Sweet alert  -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.12/dist/sweetalert2.all.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.12/dist/sweetalert2.min.css" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="assets/style.css">
+
+    
+  </head>
+  <body style="display: none;">
+    
+    <div class="Sonidos">
+      <audio  id="SoundRun" loop src="sounds/run.mp3"></audio>
+      <audio  id="Soundfalling" src="sounds/Dino_falling.mp3"></audio>
+      <audio  id="Soundjumping" src="sounds/Dino_Jump.mp3"></audio>
+      <audio  id="SoundDead" src="sounds/DeadSound.mp3"></audio>
+    </div>
+    <!-- Pantalla Principal -->
+    <div id="Menu">
+      <div class="col-12 text-center">
+        <button id="BtnIniciar" disabled class="btn btn-success"> <i class="fa-solid fa-play"></i></button>
+      </div>
+    </div>
+
+    <div class="DinoAnimate">
+      <img id="DinoAnimateImg" src="img/Dino_run.gif" width="200px">
+    </div>
+
+    <div class="clickToStart" style="display: none;">
+        <img class="IMGTouchClick" src="img/touch_start2.gif">
+        <img class="IMGSpaceClick" width="500px" src="img/space_click.gif">
+    </div>
+
+    <!-- Juego -->
+    <div class="Juego" style="display: none;">
+
+       
+
+    
+        <!-- Dino -->
+        <div  class="Dino">
+            <img id="SpriteDino"  src="img/Dino_run.gif">
+        </div>
+
+        <!-- Cactus-->
+        <div class="Cactus">
+        <img id="Cactus_obst" src="img/cactus_obst.png">
+        </div>
+
+        <!-- Score -->
+        <div class="Score" style="display: none;">
+        <h1 id="scoreH1">SCORE: 0</h1>
+        </div>
+
+        <!-- Suelo -->
+        <div class="Suelo">
+        </div>
+  
+
+      
+    </div>
+
+     <!-- Pantalla de Game Over -->
+     <div class="GameOver" style="display: none;">
+      <h1 class="font-weight-bold text-danger TituloGameOver"> ¡Has Perdido! </h1>
+      <h6 class="Puntuacion"> </h6>
+    
+      <!-- Reiniciar Juego -->
+      <div class="BotonesGameOver">
+        <div class="p-3 text-center">
+          <button type="button" id="BTNHome" class="btn btn-info">
+            <i class="fa-solid fa-house"></i>
+          </button>
+          <h6 class="text-info font-weight-bold mt-2">
+            Inicio
+          </h6>
+        </div>
+        <div class="p-3 text-center">
+          <button type="button" id="BTNReload" class="btn btn-info">
+            <i class="fa-solid fa-rotate-right"></i>
+          </button>
+          <h6 class="text-info font-weight-bold mt-2">
+            Volver a jugar
+          </h6>
+        </div>
+      </div>
+    </div>
+
+     
+
+    <!-- Boton Flotante ranking -->
+    <div class="Rank">
+        <button id="BtnRank" class="btn btn-info"> <i class="fa-solid fa-ranking-star"></i> </button>
+    </div>
+
+    <!-- Boton Guardar -->
+    <div id="DivBtnSaveScore" style="display: none;" class="text-center">
+      <button type="button" id="BtnSaveScore" class="btn btn-info">
+        <i class="fa-solid fa-floppy-disk"></i>
+      </button> <br>
+      <label class="text-primary font-weight-bold"> Guardar </label>
+    </div>
+    
+   
+
+      
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" integrity="sha512-fD9DI5bZwQxOi7MhYWnnNPlvXdp/2Pj3XSTRrFs5FQa4mizyGLnJcN6tuvUS6LbmgN1ut+XGSABKvjN0H6Aoow==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="assets/script.js"></script>
+    
+  </body>
+</html>
