@@ -1,0 +1,7 @@
+CREATE DATABASE dinorun;
+CREATE TABLE usuario(
+	IDUsuario int PRIMARY KEY AUTO_INCREMENT,
+ 	Nombre varchar(45) not null,
+    Score varchar(45) not null,
+    Fecha datetime not null
+)
