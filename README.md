@@ -21,6 +21,8 @@ Jugar -> http://dinorun.fast-page.org
 
 ![App Screenshot](screenshots/image3.png)
 
+![App Screenshot](screenshots/image4.png)
+
 
 ## Lenguajes
 
