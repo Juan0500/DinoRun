@@ -12,7 +12,7 @@ Desarrollado con **HTML, CSS y JavaScript**, DinoRun ofrece una **jugabilidad fl
 
 ## Demo
 
-Jugar -> http://dinorun.fast-page.org
+Jugar -> https://mydinorun.fast-page.org
 ## Screenshots
 
 ![App Screenshot](screenshots/image1.png)
